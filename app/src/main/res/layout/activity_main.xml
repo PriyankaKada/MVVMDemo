@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+        <variable
+            name="login"
+            type="com.example.webwerks.mvvmdemo.ViewModel.UserModel" />
+
+        <variable
+            name="userloginevent"
+            type="com.example.webwerks.mvvmdemo.Commands.userLogin" />
+
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp"
+        tools:context=".MainActivity">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:id="@+id/email_id"
+            android:text="@={login.email}"
+            android:hint="@{login.email_hint}"
+            android:textColorHint="@color/white" />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:text="@={login.password}"
+            android:hint="@{login.password_hint}"
+            android:id="@+id/pass_id"
+            android:textColorHint="@color/white" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textStyle="bold"
+            android:text="Login"
+            android:onClick="@{(v)->userloginevent.onClickLogin()}"
+
+            />
+
+    </LinearLayout>
+</layout>
